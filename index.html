@@ -1,198 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>XianLong Yue – Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>XianLong Yue – Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+          margin: 0;
+          background: #f9fafb;
+          color: #111;
+          line-height: 1.6;
+        }
 
-<style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: 0;
-  background: #f9fafb;
-  color: #111;
-  line-height: 1.6;
-}
+        /* Container */
+        .container {
+          max-width: 800px;
+          margin: auto;
+          padding: 40px 20px;
+        }
 
-/* Container */
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px 20px;
-}
+        /* Typography */
+        h1 {
+          font-size: 36px;
+          margin-bottom: 10px;
+        }
 
-/* Typography */
-h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
+        h2 {
+          font-size: 24px;
+          margin-top: 60px;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 5px;
+        }
 
-h2 {
-  font-size: 24px;
-  margin-top: 60px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-}
+        p, ul, a {
+            margin-block-start:0;
+            margin-block-end:0;
+            margin-bottom: 20px;
+            color: grey;
+        }
+        
+        b{
+            font-weight:600;
+        }
+        
+        li{
+            margin-bottom:10px;
+        }
+        
+        .profile-pic {
+            width:180px;
+            border-radius:999px;
+        }
 
-p {
-  margin: 10px 0;
-}
+        .tagline {
+          color: #666;
+        }
 
-.tagline {
-  color: #666;
-}
+        /* Sections */
+        .section {
+          margin-top: 50px;
+        }
 
-/* Sections */
-.section {
-  margin-top: 50px;
-}
+        /* Cards */
+        .case {
+          margin-top: 30px;
+          padding: 24px;
+          background: white;
+          border-radius: 12px;
+          border: 1px solid #eee;
+          transition: all 0.3s ease;
+        }
 
-/* Cards */
-.case {
-  margin-top: 30px;
-  padding: 24px;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  transition: all 0.3s ease;
-}
+        /* Hover effect */
+        .case:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
 
-/* Hover effect */
-.case:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
+        /* Labels */
+        .label {
+          font-weight: 600;
+          margin: 0;
+          color: black;
+        }
 
-/* Labels */
-.label {
-  font-weight: 600;
-  margin-top: 15px;
-}
+        /* Fade-in animation */
+        .fade-in {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.8s ease;
+        }
 
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
+        .fade-in.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+        /* Footer */
+        footer {
+          margin-top: 60px;
+          font-size: 14px;
+          color: #777;
+        }
 
-/* Footer */
-footer {
-  margin-top: 60px;
-  font-size: 14px;
-  color: #777;
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-</style>
+        /* Smooth scroll */
+        html {
+          scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
 
-<div class="container">
+        <!-- HERO -->
+        <img src="images/IMG_5839.jpg" class="profile-pic fade-in"/>
+        <h1 class="fade-in">Xian Long (XL)</h1>
+        <p class="tagline fade-in">Designing clarity in complex systems — helping users understand, decide, and act.</p>
 
-  <!-- HERO -->
-  <h1 class="fade-in">XianLong Yue</h1>
-  <p class="tagline fade-in">Designing clarity in complex systems — helping users understand, decide, and act.</p>
+        <!-- ABOUT -->
+        <div class="section fade-in">
+          <h2>About</h2>
+          <p>
+            I design systems and experiences that simplify complex workflows and improve how people interact with products.
+            My background in fintech and marketing allows me to bridge business, user needs, and execution.
+          </p>
+        </div>
 
-  <!-- ABOUT -->
-  <div class="section fade-in">
-    <h2>About</h2>
-    <p>
-      I design systems and experiences that simplify complex workflows and improve how people interact with products.
-      My background in fintech and marketing allows me to bridge business, user needs, and execution.
-    </p>
-  </div>
+        <!-- CASE STUDY 1 -->
+        <div class="section fade-in">
+          <h2>Case Study 1: Simplifying Global Banking Infrastructure</h2>
 
-  <!-- CASE STUDY 1 -->
-  <div class="section fade-in">
-    <h2>Case Study 1 — Simplifying Financial Infrastructure</h2>
-    <div class="case">
-      <p class="label">Problem</p>
-      <p>Users struggled to understand complex blockchain systems in real-world conversations.</p>
+          <div class="case">
+            <p class="label">Context</p>
+            <p>
+                Partior — An institutional, blockchain-based clearing and settlement platform for global financial institutions.
+            </p>
 
-      <p class="label">Solution</p>
-      <p>Designed structured storytelling and visual-first content to reduce cognitive load.</p>
+            <p class="label">Problem</p>
+            <p>
+                Banking stakeholders struggled to grasp the platform’s utility due to high cognitive load from overly technical documentation. The existing materials were inaccessible for non-technical decision-makers, creating a friction point in critical Go-To-Market (GTM) conversations.
+            </p>
 
-      <p class="label">Impact</p>
-      <p>Improved clarity in client conversations and used in major bank engagements.</p>
+            <p class="label">Approach</p>
+            <p>
+                I reframed the challenge from a technical documentation task to an information design problem:
+            </p>
+            <ul>
+                <li>
+                    <b>Early Discovery:</b> I engaged with internal stakeholders to deconstruct complex clearing and settlement flows into fundamental principles.
+                </li>
+                <li>
+                    <b>Iterative Design:</b> Rather than seeking "perfection" in technical minutiae, I focused on building a modular storytelling system that prioritised clarity and mental model alignment over exhaustive detail.
+                </li>
+            </ul>
+
+            <p class="label">Solution</p>
+            <p>
+                I developed a visual-first narrative infrastructure designed to facilitate high-level banking engagements:
+            </p>
+            <ul>
+                <li>
+                    <b>Modular Content System:</b> Created structured narrative flows that allowed representatives to tailor the depth of technical explanation based on the stakeholder's needs.
+                    <img src="images/ModularContentSystem.png" style="width:100%; border-radius:8px; margin-top:10px;">
+                </li>
+                <li>
+                    <b>Visual Communication:</b> Developed high-impact visual explanations—including a flagship video for major industry events—to synthesize complex infrastructure concepts into digestible insights.
+                </li>
+            </ul>        
+
+            <p class="label">Trade-offs</p>
+            <p>
+                <b>Clarity vs. Completeness:</b> I made a deliberate choice to simplify technical edge cases to improve the usability of the information. While this meant omitting certain technical granularities, it ensured that the core value proposition was understood and actionable during time-sensitive bank engagements.
+            </p>
+
+            <p class="label">Outcome</p>
+            <p>
+                The redesigned narrative system significantly reduced friction in GTM cycles and improved institutional understanding. The assets were deployed at Sibos, supporting major engagements with global partners such as Deutsche Bank.            
+            </p>
+            
+            <img src="images/42da3e1f-8ed3-4a07-92d8-b192d1c89c43.JPG" style="width:100%; border-radius:8px;">
+            <p><small>Photo of Deutsche Bank's booth at Sibos, showcasing the video I've developed for Partior, helping communicate complex infrastructure concepts to global banking stakeholders.</small></p>
+            
+            <p><small>Video link: <a href="https://corporates.db.com/more/latest-news/deutsche-bank-conducts-first-euro-transaction-via-partior-s-blockchain-platform#watchmiid=9QZVPtZCZfKyb3wYoF9NgM">Deutsche Bank conducts firs euro transaction on Blockchain</a></small></p>
+            
+            <p class="label">Skills</p>
+            <p>
+            Information Design · Product Storytelling · Stakeholder Communication · GTM Enablement · Visual Communication · Systems Thinking
+            </p>
+          </div>
+        </div>
+
+        <!-- CASE STUDY 2 -->
+        <div class="section fade-in">
+          <h2>Case Study 2: Redesigning Transparency for Regulated Financial Institution</h2>
+
+          <div class="case">
+            <p class="label">Context</p>
+            <p>TradeTogether, a Singapore-based investment firm managing a Variable Capital Company (VCC) focused on digital infrastructure and AI. The project involved a comprehensive brand identity redesign and a full-scale website revamp to transition the firm from a retail-leaning digital presence to an institutional-grade platform.</p>
+
+            <p class="label">Problem</p>
+            <p>
+                The legacy brand identity and website did not reflect the firm’s operational maturity or its CMS-licensed status. While the firm was scaling to manage institutional-grade funds, the existing user experience felt disconnected from the high-stakes, regulated environment of Singaporean finance, creating a "trust gap" for sophisticated allocators and family offices.
+            </p>
+
+            <p class="label">Approach</p>
+            <p>
+                I approached the revamp as a first-principles problem, focusing on how design can build institutional trust:
+            </p>  
+            <ul>
+                <li><b>Stakeholder Alignment:</b> I collaborated with the team to map out compliance requirements, including mandatory restricted access frameworks for accredited investors.</li>
+
+                <li><b>Prototyping for Clarity:</b> I prioritised the clarity of information architecture. I used the Golden Ratio to establish a mathematically precise brand system that communicated "Financial Engineering" through visual balance.</li>
+
+                <li><b>Prioritising Maintainability:</b> Rather than implementing complex hard-coding or "fancy" fragile logic, I focused on building a robust, accessible WordPress environment. I ensured that the site structure remained intuitive so that the internal team could manage and edit content autonomously.</li>
+            </ul>
+
+            <p class="label">Solution</p>
+            <p>
+                I delivered an Institutional Foundry—a web ecosystem designed for usability and structural clarity:            
+            </p>
+            <ul>
+                <li>
+                    <b>Brand Identity System:</b> Developed comprehensive guidelines including primary/secondary logo usage, exclusion zones, and colour contrast standards to ensure consistent application across all touchpoints.<br>
+                    <img src="images/TT_Brand_Guidelines_Artboards.png" style="width:100%; border-radius:8px; margin-top:10px;">
+                    File: <a href="TradeTogether-Brand-Guidelines.pdf" target="_blank">TradeTogether Brand Guidelines.pdf</a>
+                </li>
+
+                <li>
+                    <b>Administrative Usability:</b> Customise an existing WordPress theme (with minimal CSS and JavaScript) to remain highly editable via the admin panel, empowering TradeTogether employees to maintain content without further engineering intervention.<br>
+                    <img src="images/TT_Wordpress_Theme_Styles.png" style="width:100%; border-radius:8px; margin-top:10px;">
+                </li>
+
+                <li>
+                    <b>Iterative Compliance:</b> Designed a professional "Important Notice" restricted access gateway for first-time visitors to comply with Singapore's SFA 2001 without creating unnecessary user drop-off.<br>
+                    <img src="images/Notice-and-Disclaimer-Popup.png" style="width:100%; border-radius:8px; margin-top:10px;">
+                </li>
+            </ul>
+
+            <p class="label">Trade-offs</p>
+            <p>
+                <b>Regulatory Integrity vs. User Friction:</b> A key challenge was implementing the mandatory investor eligibility self-assessment. While traditional UX patterns prioritise "frictionless" entry, I defended the introduction of a deliberate "compliance gate." I argued that for institutional users, a clear regulatory perimeter is a trust-building feature rather than a barrier, as it validates the firm's legal and fiduciary rigour.            
+            </p>
+            <p class="label">Outcome</p>
+            <p>
+                The revamp supported the firm’s transition to a full CMS Licence from MAS. By prioritising a clear "System of Record" and a maintainable backend, I strengthened brand trust and provided the sustainable architecture necessary to launch the TradeTogether Global Income VCC Fund.
+            </p>
+            <p><small>Website link: <a href="https://tradetogether0.wpcomstaging.com/">TradeTogether Staging Site</a></small></p>
+            <p class="label">Skills</p>
+            <p>
+                Information Architecture · UX Writing · User Flow Design · 
+                Content Strategy · Cross-functional Collaboration · Web Optimisation
+            </p>
+          </div>
+        </div>
+
+        <!--
+        <div class="section fade-in">
+          <h2>Case Study 3 — Building Product Narrative (0 → 1)</h2>
+
+          <div class="case">
+            <p class="label">Context</p>
+            <p>Early-stage financial wellness product.</p>
+
+            <p class="label">Problem</p>
+            <p>
+              Users lacked understanding and trust in the product due to unclear positioning.
+            </p>
+
+            <p class="label">Approach</p>
+            <p>
+              Treated as a product clarity problem — simplify messaging and build trust through consistency.
+            </p>
+
+            <p class="label">Solution</p>
+            <p>
+              Developed a foundational narrative system across landing pages and campaigns.
+            </p>
+
+            <p class="label">Trade-offs</p>
+            <p>
+              Balanced emotional storytelling with functional clarity.
+            </p>
+
+            <p class="label">Outcome</p>
+            <p>
+              Improved user engagement and strengthened brand trust in early growth stage.
+            </p>
+          </div>
+        </div>
+        -->
+
+        <!-- WORK STYLE -->
+        <div class="section fade-in">
+          <h2>How I Work</h2>
+          <p>
+            I focus on understanding users early, prototyping quickly, and iterating based on feedback.
+            I prioritise clarity and usability over perfection.
+          </p>
+        </div>
+       
+        <div class="section fade-in">
+            <h2>Tools</h2>
+            <p>
+            Figma · Adobe Creative Suite · Web CMS · HTML/CSS/Javascript · AI-assisted workflows
+            </p>
+        </div>
+            
+        <!-- CONTACT -->
+        <div class="section fade-in">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:xlcommunicates@gmail.com">xlcommunicates@gmail.com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/xianlong-yue-673240166/">https://www.linkedin.com/in/xianlong-yue-673240166/</a></p>
+        </div>
+
+        <footer class="fade-in">
+          © 2026 XianLong Yue
+        </footer>
+
     </div>
-  </div>
+    
+    <!-- JS for scroll animations -->
+    <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
 
-  <!-- CASE STUDY 2 -->
-  <div class="section fade-in">
-    <h2>Case Study 2 — Website Experience</h2>
-    <div class="case">
-      <p class="label">Problem</p>
-      <p>Unclear navigation and fragmented messaging.</p>
-
-      <p class="label">Solution</p>
-      <p>Re-architected content hierarchy and improved user flow.</p>
-
-      <p class="label">Impact</p>
-      <p>Better engagement and clearer understanding of product.</p>
-    </div>
-  </div>
-
-  <!-- CASE STUDY 3 -->
-  <div class="section fade-in">
-    <h2>Case Study 3 — Product Narrative</h2>
-    <div class="case">
-      <p class="label">Problem</p>
-      <p>Low trust and unclear positioning in early-stage product.</p>
-
-      <p class="label">Solution</p>
-      <p>Built a clear, trust-driven messaging system.</p>
-
-      <p class="label">Impact</p>
-      <p>Improved engagement and user understanding.</p>
-    </div>
-  </div>
-
-  <!-- WORK STYLE -->
-  <div class="section fade-in">
-    <h2>How I Work</h2>
-    <p>
-      I focus on understanding users early, prototyping quickly, and iterating based on feedback.
-      I prioritise clarity and usability over perfection.
-    </p>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="section fade-in">
-    <h2>Contact</h2>
-    <p>Email: <a mailto="xlcommunicates@gmail.com">xlcommunicates@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/xianlong-yue-673240166/">https://www.linkedin.com/in/xianlong-yue-673240166/</a></p>
-  </div>
-
-  <footer class="fade-in">
-    © 2026 XianLong Yue
-  </footer>
-
-</div>
-
-<!-- JS for scroll animations -->
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
-
-document.querySelectorAll('.fade-in').forEach(el => {
-  observer.observe(el);
-});
-</script>
-
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+    </script>
 </body>
 </html>
