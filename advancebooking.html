@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AdvanceBooking — building a SaaS business to understand one | XianLong Yue</title>
+<meta name="description" content="Case study: designing and building AdvanceBooking, a live multi-tenant SaaS booking and point-of-sale platform with subscription billing on Stripe — pricing, packaging, merchant onboarding and production discipline.">
+<link rel="canonical" href="https://xlcommunicates-beep.github.io/advancebooking.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AdvanceBooking — building a SaaS business to understand one">
+<meta property="og:description" content="A live multi-tenant SaaS platform with subscription billing on Stripe: pricing, packaging, activation and merchant onboarding.">
+<meta property="og:url" content="https://xlcommunicates-beep.github.io/advancebooking.html">
+<meta property="og:locale" content="en_GB">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap-wide">
+    <a class="brand" href="index.html">XianLong Yue <span>· XL</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="page-head">
+    <div class="wrap">
+      <p class="kicker">Case study · Product &amp; payments</p>
+      <h1>Building a SaaS business to understand one</h1>
+      <p class="lede">A live multi-tenant booking and point-of-sale platform with subscription
+      billing on Stripe — where pricing, packaging and merchant onboarding stop being abstractions.</p>
+      <dl class="facts">
+        <div><dt>Product</dt><dd>AdvanceBooking · advancebooking.app</dd></div>
+        <div><dt>My role</dt><dd>Sole designer, builder and product owner</dd></div>
+        <div><dt>Period</dt><dd>Jul 2025 – present</dd></div>
+        <div><dt>Status</dt><dd>Live in production, pilot users</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="wrap">
+
+      <h2>Why this exists</h2>
+      <p>I market software to businesses. It seemed unreasonable to keep doing that without having
+      once been on the other side of the decisions — what to charge, what to put behind which plan,
+      what a merchant will tolerate during onboarding, and what happens operationally when a
+      subscription payment fails at two in the morning.</p>
+      <p>AdvanceBooking is a multi-tenant SaaS booking and point-of-sale platform for service
+      businesses. Merchants manage staff, services, bookings, customers, memberships and billing
+      from one dashboard; their customers book through a public widget. It runs in production.</p>
+
+      <div class="role-box">
+        <p><strong>This is not an engineering credential and I am not applying for engineering
+        roles.</strong> Its value to a marketing role is that it makes my understanding of SaaS
+        business models, subscription payments and merchant needs concrete rather than theoretical —
+        and lets me hold a substantive conversation with a product team.</p>
+      </div>
+
+      <h2>The customer problem</h2>
+      <p>Small service businesses — salons, clinics, studios — run on a patchwork of phone bookings,
+      messaging apps, paper diaries and a card terminal. The failure is not any single tool; it is
+      that the customer record, the booking, the payment and the loyalty balance live in four places
+      that never reconcile. The operator becomes the integration layer, and does that work during
+      the hours they should be serving customers.</p>
+
+      <h2>Commercial decisions</h2>
+      <ul class="plain">
+        <li><strong>Pricing and packaging.</strong> Four tiers — free, solo, team and business —
+        with feature gating and plan entitlements. The genuinely difficult decision was which
+        features gate upgrades without making the entry tier useless. Staff seats turned out to be
+        the honest boundary, because they track the value a business is actually getting.</li>
+        <li><strong>Free tier as activation, not charity.</strong> The free plan is deliberately
+        capable enough to move a business off paper, and deliberately limited where growth begins.
+        A free tier that cannot demonstrate value produces no upgrades; one that never binds
+        produces no revenue.</li>
+        <li><strong>Time-to-value over feature depth.</strong> A new merchant is provisioned with
+        working defaults at signup rather than an empty dashboard. Repeatedly, the trade-off was
+        fewer options in exchange for a merchant reaching their first real booking sooner.</li>
+        <li><strong>Building for the operator, not the buyer.</strong> The people using this all
+        day are front-desk staff, so permissions, quick actions and error recovery mattered more
+        than dashboards for the owner.</li>
+      </ul>
+
+      <h2>Payments and billing</h2>
+      <p>Subscription billing runs on Stripe. Designing it end to end meant working through the
+      parts that are invisible until they break: the subscription lifecycle across upgrades,
+      downgrades, failed payments and cancellations; what a merchant should still be able to do
+      while payment is failing; how entitlements resolve when a plan changes mid-cycle; and
+      reconciling webhook events with application state so the two never silently diverge.</p>
+      <p>Alongside subscriptions, the commerce side handles the messy reality of how service
+      businesses actually charge: checkout with add-ons and products, credits and prepaid packages,
+      memberships and their benefits, discounts, gift cards, and refunds and voided transactions
+      that must return credits correctly. Most of the difficulty in payments is not taking money —
+      it is everything that happens afterwards.</p>
+
+      <h2>Production discipline</h2>
+      <p>Because it is live and holds other businesses' customer data, it is built to be operated
+      rather than demonstrated: tenant isolation enforced at the database level through row-level
+      security; multi-factor authentication with email-token gating on sensitive actions; audit
+      logging on destructive operations; automated unit, integration and end-to-end test suites;
+      error monitoring; and continuous deployment.</p>
+
+      <h2>How AI changed the work</h2>
+      <p>I built and shipped this as a solo operator using AI-assisted development throughout. The
+      lesson that transferred directly to marketing was that AI collapses the cost of producing a
+      first version, which moves the bottleneck to judgement: deciding what should exist, what good
+      looks like, and what to reject. The volume of output stopped being the constraint. Knowing
+      which output was worth keeping became the constraint.</p>
+      <p>That is now how I work on marketing production too — generate broadly, then apply strict
+      editorial judgement, rather than treating the draft as the finish line.</p>
+
+      <h2>Status and honesty about scale</h2>
+      <p>The platform is live and running with pilot users. I am not going to describe it as a
+      successful business until it has paying customers who would say so. What it demonstrably is:
+      a complete, production-grade product built end to end by one person, in front of real
+      operators, and the reason I can talk about SaaS pricing, subscription payments and merchant
+      onboarding from experience.</p>
+
+      <h2>What I learned</h2>
+      <ul class="plain">
+        <li><strong>Pricing is positioning.</strong> Every gating decision is a statement about who
+        the product is for. I had written positioning documents for years before understanding that
+        the pricing page is the positioning.</li>
+        <li><strong>Onboarding is where marketing promises get tested.</strong> The gap between what
+        a landing page implies and what the first ten minutes deliver is where trust is lost.</li>
+        <li><strong>Payments failure states are a product surface.</strong> How a platform behaves
+        when a card is declined shapes merchant trust more than any feature.</li>
+        <li><strong>Constraints clarify.</strong> Being the only person meant every feature had a
+        real cost, which made prioritisation honest in a way it rarely is with a roadmap.</li>
+      </ul>
+
+      <p class="tags"><strong>Capabilities demonstrated:</strong> product ownership · SaaS pricing
+      and packaging · subscription payments and Stripe billing · customer and operator
+      understanding · UX and operational thinking · AI-enabled execution · security and production
+      discipline</p>
+
+      <div class="pager">
+        <a href="echelon.html">← Previous: Echelon Asia Summit</a>
+        <a href="work.html">All case studies →</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="row">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="mailto:xlcommunicates@gmail.com">Email</a>
+    </div>
+    <div>© 2026 XianLong Yue · Singapore</div>
+  </div>
+</footer>
+
+</body>
+</html>
